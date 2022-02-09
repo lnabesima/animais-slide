@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+}
+.slider li {
+  flex-shrink: 0;
+  width: 80vw;
+  max-width: 800px;
+  margin: 0 20px;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=style.css.map */
