@@ -5,6 +5,10 @@ export default class Slide {
     this.dist = { finalPosition: 0, startX: 0, movement: 0 };
   }
 
+  transtition(active) {
+    this.slide.style.transition = active ? 'transform 0.3s' : '';
+  }
+
   moveSlide(distX) {
     this.dist.movePosition = distX;
     this.slide.style.transform = `translate3d(${distX}px, 0, 0)`;
@@ -26,6 +30,7 @@ export default class Slide {
       this.dist.startX = event.changedTouches[0].clientX;
     }
     this.wrapper.addEventListener(movetype, this.onMove);
+    this.transtition(false);
   }
 
   onMove(event) {
@@ -41,6 +46,7 @@ export default class Slide {
     const movetype = event.type === 'mouseup' ? 'mousemove' : 'touchmove';
     this.wrapper.removeEventListener(movetype, this.onMove);
     this.dist.finalPosition = this.dist.movePosition;
+    this.transtition(true);
     this.changeSlideOnEnd();
   }
 
@@ -114,6 +120,7 @@ export default class Slide {
 
   init() {
     this.bindEvents();
+    this.transtition(true);
     this.addSlideEvents();
     this.slidesConfig();
     return this;
