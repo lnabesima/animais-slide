@@ -44,7 +44,6 @@ img {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  gap: 5px;
 }
 [data-control=slide] li {
   width: 12px;
@@ -52,11 +51,6 @@ img {
   background-color: #fb5;
   border-radius: 50%;
   overflow: hidden;
-  text-indent: -9999px;
-  cursor: pointer;
-}
-[data-control=slide] li:is(.active, :hover) {
-  background-color: #e54;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=css.style.css.map */
